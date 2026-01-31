@@ -1,0 +1,37 @@
+variable "name" {
+  type = string
+  description = "Security group name"
+}
+
+variable "description"
+{
+  type = string
+  description = "Security group description"
+}
+variable "vpc_id"
+{
+  type = string
+  description = "VPC ID where SG will be added to"
+}
+
+variable "ingress_rules"
+{
+  type = map(object({
+    cidr_ipv4         = string
+    from_port         = number
+    ip_protocol       = string
+    to_port           = number
+  }))
+  
+}
+
+variable "egress_rules"
+{
+  type = map(object({
+    cidr_ipv4         = string
+    from_port         = number
+    ip_protocol       = string
+    to_port           = number
+  }))
+  
+}
