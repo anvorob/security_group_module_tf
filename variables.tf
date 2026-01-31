@@ -6,12 +6,14 @@ variable "security_groups"
     vpc_id = string
     ingress_rules = map(object({
       cidr_ipv4         = string
+      referenced_security_group_id = string
       from_port         = number
       ip_protocol       = string
       to_port           = number
     }))
     egress_rules = map(object({
       cidr_ipv4         = string
+      referenced_security_group_id = string
       from_port         = number
       ip_protocol       = string
       to_port           = number
