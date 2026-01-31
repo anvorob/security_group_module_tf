@@ -26,19 +26,17 @@ variable "name" {
   description = "Security group name"
 }
 
-variable "description"
-{
+variable "description" {
   type = string
   description = "Security group description"
 }
-variable "vpc_id"
-{
+
+variable "vpc_id" {
   type = string
   description = "VPC ID where SG will be added to"
 }
 
-variable "ingress_rules"
-{
+variable "ingress_rules" {
   type = map(object({
     source_security_group_id = string
     cidr_ipv4         = string
@@ -48,8 +46,7 @@ variable "ingress_rules"
   }))  
 }
 
-variable "egress_rules"
-{
+variable "egress_rules" {
   type = map(object({
     source_security_group_id = string
     cidr_ipv4         = string
