@@ -1,4 +1,4 @@
-output "security_group_id" {
+output "id" {
   value = aws_security_group.main.id  
-  description = "List of security groups"
+  description = "Security group id"
 }
