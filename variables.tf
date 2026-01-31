@@ -38,8 +38,8 @@ variable "vpc_id" {
 
 variable "ingress_rules" {
   type = map(object({
-    source_security_group_id = string
-    cidr_ipv4         = string
+    source_security_group_id = optional(string)
+    cidr_ipv4         = optional(string)
     from_port         = number
     ip_protocol       = string
     to_port           = number
@@ -48,8 +48,8 @@ variable "ingress_rules" {
 
 variable "egress_rules" {
   type = map(object({
-    source_security_group_id = string
-    cidr_ipv4         = string
+    source_security_group_id = optional(string)
+    cidr_ipv4         = optional(string)
     from_port         = number
     ip_protocol       = string
     to_port           = number
